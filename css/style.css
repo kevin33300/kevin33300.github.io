@@ -118,7 +118,7 @@ a:focus, a:hover {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .section-sm {
@@ -179,56 +179,32 @@ a:focus, a:hover {
   height: 5px;
   border-radius: 5px;
   background: #fff;
-  -webkit-animation: preloader 2s infinite ease-in-out;
   animation: preloader 2s infinite ease-in-out;
 }
 
 .preloader span:nth-child(2) {
   left: 11px;
-  -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
 }
 
 .preloader span:nth-child(3) {
   left: 22px;
-  -webkit-animation-delay: 400ms;
   animation-delay: 400ms;
 }
 
 .preloader span:nth-child(4) {
   left: 33px;
-  -webkit-animation-delay: 600ms;
   animation-delay: 600ms;
 }
 
 .preloader span:nth-child(5) {
   left: 44px;
-  -webkit-animation-delay: 800ms;
   animation-delay: 800ms;
 }
 
 .preloader span:nth-child(6) {
   left: 55px;
-  -webkit-animation-delay: 1000ms;
   animation-delay: 1000ms;
-}
-
-@-webkit-keyframes preloader {
-  0% {
-    height: 5px;
-    transform: translateY(0);
-    background: rgba(0, 0, 0, 0.1);
-  }
-  25% {
-    height: 30px;
-    transform: translateY(15px);
-    background: #28ABE3;
-  }
-  50%, 100% {
-    height: 5px;
-    transform: translateY(0);
-    background: rgba(0, 0, 0, 0.1);
-  }
 }
 @keyframes preloader {
   0% {
@@ -409,6 +385,10 @@ a:focus, a:hover {
 /*=================================================================
   Navigation
 ==================================================================*/
+.navigation {
+  background: #fff;
+  transition: 0.3s all;
+}
 .navigation .logo-default {
   display: none;
 }
@@ -895,11 +875,18 @@ a:focus, a:hover {
   font-size: 20px;
 }
 
+.about-shot-info {
+  padding-top: 108px;
+}
+.about-shot-info .container {
+  padding-top: 80px;
+}
+
 /*=================================================================
  Call To Action 1
 ==================================================================*/
 .call-to-action {
-  padding: 100px 0;
+  padding: 80px 0;
   background: url("../images/call-to-action/call-to-action-bg-2.jpg");
   background-size: cover;
   color: #ffffff;
@@ -937,7 +924,10 @@ a:focus, a:hover {
   Contact
   ==================================================================*/
 .contact-us {
-  padding: 100px 0 50px 0;
+  padding: 108px 0 50px 0;
+}
+.contact-us .container {
+  margin-top: 80px;
 }
 
 .contact-form {
@@ -1065,7 +1055,7 @@ a:focus, a:hover {
   Pricing section
 ==================================================================*/
 .pricing-table {
-  padding: 100px 0;
+  margin-top: 108px;
   padding-bottom: 70px;
   background: url("../images/pricing-bg.jpg");
   background-size: cover;
@@ -1086,6 +1076,7 @@ a:focus, a:hover {
   bottom: 0;
 }
 .pricing-table .container {
+  padding-top: 80px;
   position: relative;
   z-index: 999;
 }
@@ -1112,19 +1103,22 @@ a:focus, a:hover {
 .pricing-table .price-title > h3 {
   font-weight: 700;
   margin: 0 0 5px;
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 .pricing-table .price-title > p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   margin-top: 5px;
 }
 .pricing-table .price-title .value {
   color: #28ABE3;
-  font-size: 50px;
+  font-size: 40px;
   padding: 10px 0;
+}
+.pricing-table .price-title .value-info {
+  color: #28ABE3;
 }
 
 /*=================================================================
@@ -1881,7 +1875,7 @@ a:focus, a:hover {
 .top-footer {
   background-color: #222222;
   border-top: 1px solid #404040;
-  padding: 100px 0 80px;
+  padding: 80px 0;
 }
 .top-footer h3 {
   font-size: 16px;
