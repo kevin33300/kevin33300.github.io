@@ -1089,6 +1089,9 @@ code {
   position: relative;
   z-index: 999;
 }
+.pricing-table .pricing-boxes {
+  row-gap: 30px;
+}
 .pricing-table .pricing-item {
   padding: 40px 55px 65px;
   background: #ffffff;
