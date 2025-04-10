@@ -785,21 +785,17 @@ a:focus, a:hover {
 
 .video-section {
   height: 33vw;
-  max-height: 350px;
-  min-height: 200px;
+  max-height: 360px;
+  min-height: 180px;
   overflow: hidden;
   position: relative;
   background: black;
 }
 .video-section .bg-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  max-width: 640px;
 }
 
 .text-section {
@@ -885,6 +881,10 @@ a:focus, a:hover {
 }
 .about-shot-info .container {
   padding-top: 80px;
+}
+.about-shot-info .container .img-fluid {
+  margin: auto;
+  max-height: 500px;
 }
 
 code {
@@ -1124,7 +1124,6 @@ code {
 }
 .pricing-table .price-title > small {
   display: block;
-  height: 30px;
 }
 .pricing-table .price-title > p {
   font-size: 16px;
@@ -1135,7 +1134,8 @@ code {
 .pricing-table .price-title .value {
   color: #28ABE3;
   font-size: 40px;
-  padding: 10px 0;
+  padding: 10px 0 16px;
+  display: block;
 }
 .pricing-table .price-title .value-info {
   color: #28ABE3;
@@ -1289,6 +1289,10 @@ code {
   margin-bottom: 20px;
   width: 55px;
   transition: all 0.3s ease 0s;
+}
+.service-2 .service-container .service-item .fix-position::before {
+  left: 2px;
+  position: relative;
 }
 
 /*=================================================================
