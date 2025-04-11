@@ -1140,6 +1140,10 @@ code {
 .pricing-table .price-title .value-info {
   color: #28ABE3;
 }
+.pricing-table #inspection-de-toiture,
+.pricing-table #prise-de-vue-toiture {
+  scroll-margin-top: 108px;
+}
 
 /*=================================================================
   Portfolio section
