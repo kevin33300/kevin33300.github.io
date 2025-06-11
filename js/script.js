@@ -182,4 +182,79 @@
     }
   });
 
+  /* ========================================================================= */
+  /*	Contact form
+  /* ========================================================================= */
+
+  const API_ENDPOINT = 'https://jkreativ-form-engine-akid.onrender.com/api/contact';
+
+  $('#contact-form').on('submit', function(e) {
+    e.preventDefault();
+
+    const $submitBtn = $('#contact-submit');
+    const $messageDiv = $('#form-message'); // Add this div to your HTML
+
+    // Prepare form data
+    const formData = {
+        name: $('#name').val().trim(),
+        email: $('#email').val().trim(),
+        subject: $('#subject').val().trim(),
+        message: $('#message').val().trim()
+    };
+
+    // Show loading
+    $submitBtn.prop('disabled', true).val('Envoi en cours...');
+
+    // AJAX request
+    $.ajax({
+        url: API_ENDPOINT,
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(formData),
+        success: function(response) {
+            if (response.success) {
+                $messageDiv.html('<div style="color: green;">✓ ' + response.message + '</div>').show();
+                $('#contact-form')[0].reset();
+            } else {
+                $messageDiv.html('<div style="color: red;">✗ ' + response.message + '</div>').show();
+            }
+        },
+        error: function(xhr) {
+            let errorMsg = "Impossible d'envoyer le message. Veuillez réessayer ou nous contacter directement par email";
+            if (xhr.responseJSON && xhr.responseJSON.message) {
+                errorMsg = xhr.responseJSON.message;
+            }
+            $messageDiv.html('<div style="color: red;">✗ ' + errorMsg + '</div>').show();
+        },
+        complete: function() {
+            $submitBtn.prop('disabled', false).val('Submit');
+        }
+    });
+  });
+
+  function setFrenchValidationMessages() {
+    const fields = {
+      'name': 'Veuillez saisir votre nom',
+      'email': 'Veuillez saisir une adresse email valide',
+      'subject': 'Veuillez indiquer un sujet',
+      'message': 'Veuillez saisir votre message'
+    };
+    
+    Object.keys(fields).forEach(fieldId => {
+      const field = document.getElementById(fieldId);
+      if (field) {
+        field.addEventListener('invalid', function(e) {
+          e.target.setCustomValidity(fields[fieldId]);
+        });
+        
+        field.addEventListener('input', function(e) {
+          e.target.setCustomValidity('');
+        });
+      }
+    });
+  }
+
+  // Appeler la fonction au chargement de la page
+  document.addEventListener('DOMContentLoaded', setFrenchValidationMessages);
+
 })(jQuery);
