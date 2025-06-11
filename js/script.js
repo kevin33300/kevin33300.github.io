@@ -227,7 +227,7 @@
             $messageDiv.html('<div style="color: red;">✗ ' + errorMsg + '</div>').show();
         },
         complete: function() {
-            $submitBtn.prop('disabled', false).val('Submit');
+            $submitBtn.prop('disabled', false).val('Envoyer');
         }
     });
   });
